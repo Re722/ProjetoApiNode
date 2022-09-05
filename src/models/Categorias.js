@@ -3,8 +3,10 @@ const { Model, DataTypes } = require('sequelize')
 class Categorias extends Model {
   static init(sequelize) {
     super.init({
-      name: DataTypes.STRING,
-      email: DataTypes.STRING
+      codigo: DataTypes.CHAR,
+      titulo: DataTypes.CHAR,
+      status: DataTypes.INTEGER,
+
     }, {
       sequelize
     })

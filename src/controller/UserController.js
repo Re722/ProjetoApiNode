@@ -49,6 +49,16 @@ module.exports = {
     } catch (error) {
       res.status(400).json({ error })
     }
+  },
+  async deleteCategorias(req, res) {
+    const { id } = req.params
+    const categorias = await Categorias.findOne({ where: { id } })
+    if (!categorias) {
+      res.status(401).json({ message: 'Usuario não encontrado' })
+    } else {
+      await User.destroy({ where: { id } })
+      res.status(200).json({ ok: true })
+    }
   }
 }
 

@@ -37,11 +37,22 @@ module.exports = {
     } catch (error) {
 
       res.status(400).json({ error })
-
     }
-
+  },
+  async listCategorias(req, res) {
+    try {
+      const categorias = await Categorias.findAll()
+      if (!categorias) {
+        res.status(401).json({ message: 'Não existe usuario cadastros' })
+      }
+      res.status(200).json({ categorias })
+    } catch (error) {
+      res.status(400).json({ error })
+    }
   }
 }
+
+
 
 
 

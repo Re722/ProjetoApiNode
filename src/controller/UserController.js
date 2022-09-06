@@ -1,4 +1,4 @@
-const { update } = require('../models/Categorias')
+
 const Categorias = require('../models/Categorias')
 
 module.exports = {
@@ -56,7 +56,7 @@ module.exports = {
     if (!categorias) {
       res.status(401).json({ message: 'Usuario não encontrado' })
     } else {
-      await User.destroy({ where: { id } })
+      await Categorias.destroy({ where: { id } })
       res.status(200).json({ ok: true })
     }
   }

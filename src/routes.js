@@ -1,20 +1,10 @@
 const { Router } = require('express');
-const Categorias = require('./models/Categorias')
+
+const UserController = require('./controller/UserController')
 
 const router = Router()
 
-router.get('/', (req, res) => {
-  res.json({ HELLO: 'world' })
-
-})
-
-router.post('/', async (req, res) => {
-  const { codigo, titulo, status } = req.body
-
-  const categorias = await Categorias.create({ codigo, titulo, status })
-
-  res.json({ categorias })
-
-})
+router.post('/create-categoria', UserController.createCategorias)
+router.put('/update-categoria', UserController.updateCategorias)
 
 module.exports = router;

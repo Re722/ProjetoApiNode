@@ -13,6 +13,7 @@ router.delete('/delete-categoria/:id', categoriasController.deleteCategorias)
 router.post('/create-produtos', ProdutosController.createProdutos)
 router.patch('/update-produtos/:id', ProdutosController.updateProdutos)
 router.get('/list-produtos', ProdutosController.listProdutos)
+router.delete('/delete-produtos/:id', ProdutosController.deleteProdutos)
 
 
 

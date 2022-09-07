@@ -11,7 +11,7 @@ module.exports = {
       },
       idCategoria: {
         type: Sequelize.INTEGER,
-        foreignKey: 'idcategorias',
+      // foreignKey: 'idcategorias',
       },
       codigo: {
         type: Sequelize.VARCHAR,

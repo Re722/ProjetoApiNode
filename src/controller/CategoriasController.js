@@ -54,7 +54,7 @@ module.exports = {
     const { id } = req.params
     const categorias = await Categorias.findOne({ where: { id } })
     if (!categorias) {
-      res.status(401).json({ message: 'Usuario não encontrado' })
+      res.status(401).json({ message: 'categoria não encontrado' })
     } else {
       await Categorias.destroy({ where: { id } })
       res.status(200).json({ ok: true })

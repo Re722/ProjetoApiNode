@@ -11,6 +11,7 @@ router.get('/list-categoria', UserController.listCategorias)
 router.delete('/delete-categoria/:id', UserController.deleteCategorias)
 
 router.post('/create-produtos', ProdutosController.createProdutos)
+router.patch('/update-produtos/:id', ProdutosController.updateProdutos)
 
 
 
